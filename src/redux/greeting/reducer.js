@@ -52,7 +52,7 @@ export function getGreeting() {
   return (dispatch) => {
     const url = `${BASE_URL}`;
     dispatch(getGreetingBegin());
-    fetch(url, { mode: 'cors' }).then((response) => {
+    fetch(url).then((response) => {
       response.json().then((json) => {
         const { greeting } = json;
         dispatch(getGreetingSuccess(greeting));
